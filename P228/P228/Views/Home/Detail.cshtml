@@ -1,0 +1,16 @@
+﻿@model Mark
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h1>Detail</h1>
+<p>@Model.Id</p>
+<p>@Model.Name</p>
+<p>@Model.Count</p>
+
+@foreach (Car car in Model.Cars)
+{
+    <p>
+        <a asp-controller="home" asp-action="StuDetail" >@car.Model @car.Year @car.Engine @car.Mileage</a>
+    </p>
+}

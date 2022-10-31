@@ -1,0 +1,19 @@
+﻿@model HomeVM
+
+<h1>
+ Home Index
+</h1>
+
+<h1>Cars</h1>
+<p>@Model.Car.Model</p>
+<p>@Model.Car.Year</p>
+<p>@Model.Car.Engine</p>
+<p>@Model.Car.Mileage</p>
+
+<h1>Marks</h1>
+@foreach (Mark mark in Model.Marks)
+{
+    <p>
+        <a asp-controller="home" asp-action="detail" asp-route-id="@mark.Id">@mark.Name</a>
+    </p>
+}
